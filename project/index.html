@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUBVERSE | Streetwear</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./components/header.css">
+    <link rel="stylesheet" href="./components/products.css">
+    <link rel="stylesheet" href="./components/cart.css">
+    <link rel="stylesheet" href="./components/auth.css">
+    <link rel="stylesheet" href="./components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header id="main-header">
+        <div class="logo-container">
+          <h1 class="logo">SUB<span>VERSE</span></h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#products" class="nav-link">Shop</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <button id="search-btn" class="icon-btn"><i class="fas fa-search"></i></button>
+          <button id="cart-btn" class="icon-btn"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></button>
+          <button id="account-btn" class="icon-btn"><i class="fas fa-user"></i></button>
+          <button id="mobile-menu-btn" class="icon-btn mobile-only"><i class="fas fa-bars"></i></button>
+        </div>
+      </header>
+
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">DEFY NORMS</h1>
+          <h2 class="hero-subtitle">STREETWEAR FOR THE BOLD</h2>
+          <p class="hero-text">Elevate your style with our exclusive collection of urban-inspired clothing.</p>
+          <a href="#products" class="btn primary-btn">SHOP NOW</a>
+        </div>
+      </section>
+
+      <section id="featured" class="featured-section">
+        <h2 class="section-title">TRENDING NOW</h2>
+        <div class="featured-grid">
+          <div class="featured-item">
+            <img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg" alt="Featured hoodie">
+            <div class="featured-overlay">
+              <h3>VOID HOODIE</h3>
+              <a href="#products" class="btn outline-btn">SHOP</a>
+            </div>
+          </div>
+          <div class="featured-item">
+            <img src="https://images.pexels.com/photos/2976288/pexels-photo-2976288.jpeg" alt="Featured tee">
+            <div class="featured-overlay">
+              <h3>NEON DREAMS</h3>
+              <a href="#products" class="btn outline-btn">SHOP</a>
+            </div>
+          </div>
+          <div class="featured-item">
+            <img src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg" alt="Featured pants">
+            <div class="featured-overlay">
+              <h3>CYBER CARGO</h3>
+              <a href="#products" class="btn outline-btn">SHOP</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="products-section">
+        <h2 class="section-title">SHOP COLLECTION</h2>
+        
+        <div class="filters">
+          <div class="filter-group">
+            <button class="filter-btn active" data-category="all">ALL</button>
+            <button class="filter-btn" data-category="tees">TEES</button>
+            <button class="filter-btn" data-category="hoodies">HOODIES</button>
+            <button class="filter-btn" data-category="pants">PANTS</button>
+            <button class="filter-btn" data-category="accessories">ACCESSORIES</button>
+          </div>
+        </div>
+        
+        <div class="products-grid" id="products-container">
+          <!-- Products will be populated by JavaScript -->
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-content">
+          <h2 class="section-title">ABOUT SUBVERSE</h2>
+          <p>SUBVERSE is more than just clothing—it's a statement. Born from the underground culture and driven by creative rebellion, we create streetwear that challenges the status quo.</p>
+          <p>Our designs merge urban aesthetics with cutting-edge style, perfect for those who live beyond conventions and create their own rules.</p>
+          <div class="values">
+            <div class="value-item">
+              <i class="fas fa-bolt"></i>
+              <h3>BOLD DESIGN</h3>
+              <p>Distinctive aesthetics that make a statement</p>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-recycle"></i>
+              <h3>SUSTAINABLE</h3>
+              <p>Ethically sourced materials and production</p>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-users"></i>
+              <h3>COMMUNITY</h3>
+              <p>Building culture through creative expression</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2 class="section-title">JOIN THE MOVEMENT</h2>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" placeholder="YOUR EMAIL" required>
+          <button type="submit" class="btn primary-btn">SUBSCRIBE</button>
+        </form>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2 class="logo">SUB<span>VERSE</span></h2>
+            <p>Streetwear for the bold.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>SHOP</h3>
+              <ul>
+                <li><a href="#products">All Products</a></li>
+                <li><a href="#products">Tees</a></li>
+                <li><a href="#products">Hoodies</a></li>
+                <li><a href="#products">Pants</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>INFO</h3>
+              <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>LEGAL</h3>
+              <ul>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Copyright</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 SUBVERSE. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <!-- Cart Sidebar -->
+      <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h2>YOUR CART</h2>
+          <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+          <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-summary">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <button id="checkout-btn" class="btn primary-btn">CHECKOUT</button>
+        </div>
+      </div>
+
+      <!-- Login Modal -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>SIGN IN</h2>
+            <button class="close-btn" id="close-login">&times;</button>
+          </div>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">PASSWORD</label>
+              <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn primary-btn">SIGN IN</button>
+          </form>
+          <div class="auth-footer">
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div id="register-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>CREATE ACCOUNT</h2>
+            <button class="close-btn" id="close-register">&times;</button>
+          </div>
+          <form id="register-form">
+            <div class="form-group">
+              <label for="reg-name">NAME</label>
+              <input type="text" id="reg-name" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">EMAIL</label>
+              <input type="email" id="reg-email" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-password">PASSWORD</label>
+              <input type="password" id="reg-password" required>
+            </div>
+            <button type="submit" class="btn primary-btn">CREATE ACCOUNT</button>
+          </form>
+          <div class="auth-footer">
+            <p>Already have an account? <a href="#" id="show-login">Sign In</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details Modal -->
+      <div id="product-modal" class="modal product-modal">
+        <div class="modal-content">
+          <button class="close-btn" id="close-product">&times;</button>
+          <div id="product-details" class="product-details">
+            <!-- Product details will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div id="overlay" class="overlay"></div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

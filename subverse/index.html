@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBVERSE - Streetwear que Define sua Atitude</title>
+    <meta name="description" content="Streetwear urbano premium. Descubra peças únicas que combinam estilo, qualidade e atitude para quem não tem medo de se destacar.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>SUBVERSE</h1>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                        <li><a href="#categorias" class="nav-link">Categorias</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="btn-icon" id="search-btn" onclick="handleSearch()">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="21 21l-4.35-4.35"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon" id="login-btn">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon cart-btn" id="cart-btn">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 3h2l.4 2m0 0h13.6l-2 8H7.4m0 0L6 6H4m3.4 13a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/>
+                        </svg>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="hero-title">
+                    <span class="gradient-text">DEFINE</span> SUA ATITUDE
+                </h2>
+                <p class="hero-description">
+                    Streetwear urbano premium para quem não tem medo de se destacar. 
+                    Peças únicas que combinam estilo, qualidade e personalidade.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('produtos')">
+                        Explorar Coleção
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=800&fit=crop" alt="Streetwear Collection" class="hero-img">
+            </div>
+        </div>
+        <div class="hero-bg-elements">
+            <div class="bg-element bg-element-1"></div>
+            <div class="bg-element bg-element-2"></div>
+            <div class="bg-element bg-element-3"></div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="produtos" class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produtos em <span class="gradient-text">Destaque</span></h2>
+                <p>Descubra as peças mais procuradas da nossa coleção</p>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+
+            <div class="section-footer">
+                <button class="btn btn-outline" onclick="loadMoreProducts()">
+                    Ver Mais Produtos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categorias" class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore por <span class="gradient-text">Categoria</span></h2>
+                <p>Encontre exatamente o que você procura em nossas categorias selecionadas</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" data-category="hoodies">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=400&fit=crop" alt="Hoodies">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <span class="category-count">120+ produtos</span>
+                        <h3 class="category-title">Hoodies</h3>
+                        <p class="category-description">Conforto e estilo urbano</p>
+                        <button class="btn btn-outline" onclick="handleCategoryClick({ currentTarget: { dataset: { category: 'hoodies' } } })">Explorar</button>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="camisetas">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=400&fit=crop" alt="Camisetas">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <span class="category-count">200+ produtos</span>
+                        <h3 class="category-title">Camisetas</h3>
+                        <p class="category-description">Básicos reimaginados</p>
+                        <button class="btn btn-outline" onclick="handleCategoryClick({ currentTarget: { dataset: { category: 'camisetas' } } })">Explorar</button>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="acessorios">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&h=400&fit=crop" alt="Acessórios">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <span class="category-count">80+ produtos</span>
+                        <h3 class="category-title">Acessórios</h3>
+                        <p class="category-description">Complete seu visual</p>
+                        <button class="btn btn-outline" onclick="handleCategoryClick({ currentTarget: { dataset: { category: 'acessorios' } } })">Explorar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SUBVERSE</h3>
+                    <p>Streetwear que define sua atitude. Peças únicas para quem não tem medo de se destacar.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">TikTok</a>
+
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Camisetas</a></li>
+                        <li><a href="#">Acessórios</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Rastreamento</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Receba novidades e ofertas exclusivas</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit" class="btn btn-primary">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SUBVERSE. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Carrinho de Compras</h3>
+                <button class="modal-close" id="cart-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <div class="total-line">
+                        <span>Total: R$ <span id="cart-total">0,00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="continue-shopping">Continuar Comprando</button>
+                <button class="btn btn-primary" id="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <button class="modal-close" id="login-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                </form>
+                <div class="auth-links">
+                    <a href="#" id="register-link">Não tem conta? Cadastre-se</a>
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="script.js"></script>
+</body>
+</html>
